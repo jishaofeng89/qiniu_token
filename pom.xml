@@ -35,6 +35,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.qiniu/qiniu-java-sdk -->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.2.28</version>
+        </dependency>
+
     </dependencies>
 
     <build>
