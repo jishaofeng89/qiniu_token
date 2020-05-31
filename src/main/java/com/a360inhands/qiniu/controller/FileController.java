@@ -57,7 +57,10 @@ public class FileController {
                 System.out.println(item.mimeType);
                 System.out.println(item.putTime);
                 System.out.println(item.endUser);
-                fileInfoList.add(item);
+                // 过滤非视频数据
+                if(item.mimeType.startsWith("video")) {
+                    fileInfoList.add(item);
+                }
             }
         }
         return fileInfoList;
