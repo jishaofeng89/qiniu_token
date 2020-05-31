@@ -5,6 +5,7 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.model.FileInfo;
 import com.qiniu.util.Auth;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,15 +19,18 @@ import java.util.List;
 @RequestMapping("/file")
 public class FileController {
 
+    @Value("${qiniu.accessKey}")
+    private String accessKey;
+
+    @Value("${qiniu.secretKey}")
+    private String secretKey;
+
     @RequestMapping("/list")
     @ResponseBody
     public Object get(HttpServletRequest req, HttpServletResponse resp) {
         //构造一个带指定Zone对象的配置类
         Configuration cfg = new Configuration(Region.region1());
         //...其他参数参考类注释
-
-        String accessKey = "5-QsjwcqbzJkIkYhXqiHrD-M0dRz31i-dFSqUHgy";
-        String secretKey = "BhMikfDUxngRq54-ja9-vFsgb15WbOXxyLokJ70R";
 
         String bucket = "dynamic-app-public";
 
