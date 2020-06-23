@@ -32,7 +32,7 @@ public class FileController {
         Configuration cfg = new Configuration(Region.region1());
         //...其他参数参考类注释
 
-        String bucket = "dynamic-app-public";
+        String bucket = "dongda-video";
 
         Auth auth = Auth.create(accessKey, secretKey);
         BucketManager bucketManager = new BucketManager(auth, cfg);
